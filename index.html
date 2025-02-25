@@ -44,13 +44,13 @@
     </style>
 </head>
 
-<body>
-    <div class="container">
+<body id="main">
+    <div class="container" id="box">
         <h1 class="heading">Let's Play !!</h1>
         <h3 class="sub-heading">Roll A Dice 🎲</h3>
         <img src="./img/dice.png" class="dice" alt="dice-img" id="img">
 
-        <button class="btn" onclick="roller()">Roll</button>
+        <button class="btn" id="btn-roll" onclick="roller()">Roll</button>
     </div>
 
     <script>
@@ -61,30 +61,51 @@
             const num = Math.floor(Math.random() * (max - min+1)) +min;
 
             const diceImg = document.getElementById("img");
+            const bodyElement = document.getElementById("main");
+            const containerElement = document.getElementById("box");
+            const btnElement = document.getElementById("btn-roll")
 
             switch(num){
                 case 1:
-                    diceImg.src = "./img/one_enhanced.jpg"
+                    diceImg.src = "./img/one_enhanced.jpg";
+                    bodyElement.style.backgroundColor = "	 #ff99ff";
+                    containerElement.style.backgroundColor = "white";
+                    btnElement.style.backgroundColor = "#ff3399";
                     break;
 
                 case 2:
-                    diceImg.src = "./img/two_enhanced.jpg"
+                    diceImg.src = "./img/two_enhanced.jpg";
+                    bodyElement.style.backgroundColor = "#ffe066";
+                    containerElement.style.backgroundColor = "white";
+                    btnElement.style.backgroundColor = "#ffcc00";
                     break; 
                     
                 case 3:
-                    diceImg.src = "./img/three_enhanced.jpg"
+                    diceImg.src = "./img/three_enhanced.jpg";
+                    bodyElement.style.backgroundColor = "#99ccff";
+                    containerElement.style.backgroundColor = "white";
+                    btnElement.style.backgroundColor = "blue";
                     break;
 
                 case 4:
-                    diceImg.src = "./img/four_enhanced.jpg"
+                    diceImg.src = "./img/four_enhanced.jpg";
+                    bodyElement.style.backgroundColor = "#e699ff";
+                    containerElement.style.backgroundColor = "white";
+                    btnElement.style.backgroundColor = "purple";
                     break;
 
                 case 5:
-                    diceImg.src = "./img/five_enhanced.jpg"
+                    diceImg.src = "./img/five_enhanced.jpg";
+                    bodyElement.style.backgroundColor = "#99ff99";
+                    containerElement.style.backgroundColor = "white";
+                    btnElement.style.backgroundColor = "green";
                     break;
 
                 case 6:
-                    diceImg.src = "./img/six_enhanced.jpg"
+                    diceImg.src = "./img/six_enhanced.jpg";
+                    bodyElement.style.backgroundColor = "#ff9999";
+                    containerElement.style.backgroundColor = "white";
+                    btnElement.style.backgroundColor = "red";
                     break;
             }
 
