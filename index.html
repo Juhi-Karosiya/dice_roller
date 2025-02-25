@@ -8,14 +8,19 @@
         .container{
             border: 2px solid black;
             box-shadow: 2px 5px 5px rgb(0, 0, 0.5);
-            height: 50vh;
-            width: 50vh;
+            height: 350px;
+            width: 350px;
             margin: 15vh auto;
         }
 
         .heading{
             text-align: center;
+            padding-top: 10px;
 
+        }
+
+        .sub-heading{
+            text-align: center;
         }
 
         .dice{
@@ -26,7 +31,7 @@
 
         .btn{
             display: block;
-            margin: 20px auto;
+            margin: 10px auto;
             padding: 0 20px;
             height: 35px;
             border-radius: 5px;
@@ -42,11 +47,50 @@
 <body>
     <div class="container">
         <h1 class="heading">Let's Play !!</h1>
-        <h3 class="heading">Roll A Dice 🎲</h3>
-        <img src="./img/dice.png" class="dice" alt="dice-img">
+        <h3 class="sub-heading">Roll A Dice 🎲</h3>
+        <img src="./img/dice.png" class="dice" alt="dice-img" id="img">
 
-        <button class="btn">Roll</button>
+        <button class="btn" onclick="roller()">Roll</button>
     </div>
+
+    <script>
+        function roller(){
+            const min = 1;
+            const max = 6;
+
+            const num = Math.floor(Math.random() * (max - min+1)) +min;
+
+            const diceImg = document.getElementById("img");
+
+            switch(num){
+                case 1:
+                    diceImg.src = "./img/one_enhanced.jpg"
+                    break;
+
+                case 2:
+                    diceImg.src = "./img/two_enhanced.jpg"
+                    break; 
+                    
+                case 3:
+                    diceImg.src = "./img/three_enhanced.jpg"
+                    break;
+
+                case 4:
+                    diceImg.src = "./img/four_enhanced.jpg"
+                    break;
+
+                case 5:
+                    diceImg.src = "./img/five_enhanced.jpg"
+                    break;
+
+                case 6:
+                    diceImg.src = "./img/six_enhanced.jpg"
+                    break;
+            }
+
+        }
+
+    </script>
 
 </body>
 </html>
